@@ -1,0 +1,144 @@
+
+.completed {
+    text-decoration: line-through;
+}
+
+
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.welcomeHeading {
+    display: flex;
+    width: 200px;
+    font-size: 30px;
+    border-radius: 20px;
+    justify-content: center;
+}
+
+
+.taskEntry {
+    display: flex;
+    justify-content: center;
+}
+
+
+.newTask {
+    background-color: rgb(84, 84, 84);
+    border: solid 2px black;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor:none;
+}
+
+.newtask:focus {
+    border: solid 2px black;
+    background-color: red;
+}
+
+.inputButton {
+    font-family: 'Plus Jakarta Sans';
+    background-color: lightgray;
+    border-radius: 10px;
+    border: solid 2px black;
+    font-size: 16px;
+    cursor: none; 
+}
+
+.validationError{
+    border: 2px solid red;
+    color: red;
+}
+
+.taskList {
+    display: flex;
+    justify-content: center;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    display: flex;
+    border: solid 2px black;
+    border-radius: 10px;
+    margin: 10px;
+    padding-left: 10px;
+    font-size: 25px;
+    align-items: center;
+    background-color: rgb(111, 111, 111);
+    transition:200ms;
+    width: 600px;
+    word-break: break-all;
+}
+
+ul li:hover {
+    background-color: rgb(166, 166, 166);
+}
+
+ul li:nth-child(odd) {
+    background-color: rgb(131, 131, 131);
+}
+
+ul li:nth-child(odd):hover {
+    background-color: rgb(166, 166, 166);
+}
+
+.removeButton {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: none;
+    width: 30px;
+    height: 32px;
+    border-radius: 0px 9px 9px 0px;
+    border-left: solid 2px black;
+    margin-left: auto;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: lightgray;
+}
+
+.removeButton:hover {
+    background-color: rgb(170, 170, 170);
+}
+
+.cursor {
+    visibility: hidden;
+    rotate: -45deg;
+    border-right: 8px solid transparent;
+    border-left: 6px solid transparent;
+    border-bottom: 20px solid black;
+    z-index: 1;
+    position: absolute;
+    pointer-events: none;
+}
+
+.pageContainer {
+    height: 100%;    
+    min-width: 800px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgb(206, 206, 206, 0.5));
+    cursor: none;
+}
+
+html, body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans';
+    cursor: none;
+}
+
+
+
+    /* background-image: radial-gradient(rgba(0,0,0,0) 1px, #161616 1px);
+    background-size: 10px 10px;
+    backdrop-filter: blur(20px); */
+
