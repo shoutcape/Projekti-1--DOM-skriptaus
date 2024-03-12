@@ -1,7 +1,7 @@
 # Projekti 1: DOM-skriptaus
  Kurssi: Laurea Web-sovellusten kehittäminen Javascriptillä TO00BL10-3022
  
-## Osoite: 
+## Osoite: https://main--shoutcapestodoapp.netlify.app/
 
 # ToDo Sovellus
 
@@ -19,7 +19,7 @@ Tämä on yksinkertainen ToDo-sovellus, joka on toteutettu käyttäen vain natii
 
 - HTML
 - CSS
-- JavaScript (ES6)
+- JavaScript
 
 ## Käyttöohjeet
 
