@@ -26,24 +26,25 @@ document.addEventListener('mousemove', function (event) {
 
 
 function addRemoveButton(task) {
+    let taskText = task.textContent
     let removeButton = document.createElement('span')
     removeButton.innerHTML = '&#10005;'
     //add onclick event to the removeButton
     removeButton.onclick = function (event) {
         //stopPropagation prevents the activation of the click event on the parent element
         event.stopPropagation()
-        task.remove()
         /*
         To remove the current task from local storage
         we need to get the saved tasks and the index of the current task
         */
-        let tasks = JSON.parse(localStorage.getItem('tasks'))
-        let index = tasks.indexOf(task.innerHTML)
-        // remove the task from the tasks array by using .splice(index, amount of removable items)
-        tasks.splice(index, 1)
-        //then we save the remaining tasks back to local storage
-        localStorage.setItem('tasks', JSON.stringify(tasks))
-        updateTaskCount()
+       let tasks = JSON.parse(localStorage.getItem('tasks'))
+       let index = tasks.findIndex(task => task.text === taskText)
+       // remove the task from the tasks array by using .splice(index, amount of removable items)
+       tasks.splice(index, 1)
+       //then we save the remaining tasks back to local storage
+       localStorage.setItem('tasks', JSON.stringify(tasks))
+       task.remove()
+       updateTaskCount()
     }
     removeButton.classList.add('removeButton')
     task.appendChild(removeButton)
