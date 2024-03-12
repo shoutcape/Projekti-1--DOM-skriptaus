@@ -1,43 +1,37 @@
 
-.completed {
-    text-decoration: line-through;
-}
-
-
-
 
 .container {
     display: flex;
     justify-content: center;
-    
 }
 
 .welcomeHeading {
-    display: flex;
-    width: 200px;
     font-size: 30px;
-    border-radius: 20px;
-    justify-content: center;
 }
-
 
 .taskEntry {
     display: flex;
     justify-content: center;
 }
 
+.taskForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
 
 .newTask {
-    background-color: rgb(84, 84, 84);
+    background-color: rgb(180, 180, 180);
     border: solid 2px black;
     border-radius: 10px;
     font-size: 18px;
     cursor:none;
+    outline: none;
 }
 
-.newtask:focus {
-    border: solid 2px black;
-    background-color: red;
+.newTask:focus-within {
+    background-color: rgb(201, 201, 201);
 }
 
 .inputButton {
@@ -46,12 +40,18 @@
     border-radius: 10px;
     border: solid 2px black;
     font-size: 16px;
+    height: 100%;
     cursor: none; 
+    transition: 200ms;
+}
+.inputButton:hover {
+    background-color: rgb(170, 170, 170);
 }
 
 .validationError{
     border: 2px solid red;
     color: red;
+    width: 365px;
 }
 
 .taskList {
@@ -59,86 +59,111 @@
     justify-content: center;
 }
 
+.taskList h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+}
+
+/* Make the tasklists stack on top of each other when on a smaller screen*/
+@media (max-width: 1100px) {
+    .taskList {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.completedTaskList h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+}
+
 ul {
     padding: 0;
     margin: 0;
+    width: 600px;
+    box-sizing: border-box;
 }
 
 ul li {
     display: flex;
+    position: relative;
     border: solid 2px black;
     border-radius: 10px;
     margin: 10px;
     padding-left: 10px;
     font-size: 25px;
     align-items: center;
-    background-color: rgb(111, 111, 111);
+    background-color: rgb(209, 208, 208);
     transition:200ms;
-    width: 600px;
     word-break: break-all;
-}
-
-ul li:hover {
-    background-color: rgb(166, 166, 166);
+    padding-right: 30px;
 }
 
 ul li:nth-child(odd) {
-    background-color: rgb(131, 131, 131);
+    background-color: rgb(174, 174, 174);
 }
 
-ul li:nth-child(odd):hover {
-    background-color: rgb(166, 166, 166);
+ul li:hover {
+    background-color: rgb(156, 156, 156);
+}
+
+ul li.completed {
+    text-decoration: line-through;
 }
 
 .removeButton {
-    text-decoration: none;
+    cursor: none;
+    /*requires position absolute to not inherit line-through from .completed? */
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: none;
+    top: 0px;
+    right: 0px;
     width: 30px;
-    height: 32px;
+    height: 100%;
     border-radius: 0px 9px 9px 0px;
     border-left: solid 2px black;
-    margin-left: auto;
     font-size: 20px;
     font-weight: bold;
     background-color: lightgray;
 }
 
 .removeButton:hover {
-    background-color: rgb(170, 170, 170);
+    background-color: rgb(166, 166, 166);
 }
 
 .cursor {
     visibility: hidden;
+    /* Modify the rectangle into a triangle */
     rotate: -45deg;
     border-right: 8px solid transparent;
     border-left: 6px solid transparent;
     border-bottom: 20px solid black;
     z-index: 1;
-    position: absolute;
+    position: fixed;
+    overflow: hidden;
     pointer-events: none;
 }
 
 .pageContainer {
-    height: 100%;    
-    min-width: 800px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgb(206, 206, 206, 0.5));
-    cursor: none;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
 }
 
-html, body {
-    height: 100vh;
+
+.pageContainer h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+}
+
+html {
     margin: 0;
     padding: 0;
     font-family: 'Plus Jakarta Sans';
     cursor: none;
 }
-
-
-
-    /* background-image: radial-gradient(rgba(0,0,0,0) 1px, #161616 1px);
-    background-size: 10px 10px;
-    backdrop-filter: blur(20px); */
-

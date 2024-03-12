@@ -12,21 +12,33 @@
     <div class="pageContainer">
         <div class="container">
             <div class="welcomeHeading">
-                <h1 id="user-welcome">Tervetuloa</h1>
+                <h1 id="user-welcome">Welcome</h1>
             </div>
         </div>
+        <h2>Here you can add current tasks</h2>
         
         <div class="taskEntry">
             <form id="taskForm" class="taskform">
-                <input class="newTask" type="text" id="newTask" value="">
+                <input autocomplete="off" class="newTask" type="text" id="newTask" value="">
                 <button class="inputButton" type="submit" id="inputButton">Add task</button>
             </form>
         </div>
         
         <div class="taskList">
-            <ul id="taskList"></ul>
+            <div>
+                <h2>Current tasks:
+                    <span id="currentTaskAmount"></span>
+                </h2>
+                <ul id="taskList"></ul>
+            </div>
+            <div>
+                <h2>Completed tasks:
+                    <span id="completedTaskAmount"></span>
+                </h2>
+                <ul id="completedTaskList" class="completedTaskList"></ul>
+            </div>
         </div>
-        
+
     </div>
     <script src="main.js"></script>
 </body>
