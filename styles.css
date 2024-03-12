@@ -72,6 +72,7 @@
         align-items: center;
     }
 }
+/* Make the tasklists stack on top of each other when on a smaller screen*/
 
 .completedTaskList h2 {
     display: flex;
@@ -84,6 +85,20 @@ ul {
     margin: 0;
     width: 600px;
     box-sizing: border-box;
+}
+
+@media (max-width: 450px) {
+    .taskList {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+        width: 370px;
+        box-sizing: border-box;
+    }
 }
 
 ul li {
