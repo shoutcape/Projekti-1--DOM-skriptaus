@@ -19,7 +19,7 @@ Tämä on yksinkertainen ToDo-sovellus, joka on toteutettu käyttäen vain natii
 
 - HTML
 - CSS
-- JavaScript (ES6)
+- JavaScript
 
 ## Käyttöohjeet
 
