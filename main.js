@@ -17,9 +17,7 @@ taskForm.onsubmit = function (event) {
 document.addEventListener('mousemove', function (event) {
     let x = event.clientX
     let y = event.clientY
-    // console.log(x,y)
     let cursor = document.getElementById('cursor')
-    // console.log(cursor)
     // offsets for the cursor to be in the middle of the cursor image
         cursor.style.left = x-0.75 + 'px'
         cursor.style.top = y-1.5 + 'px'
@@ -41,7 +39,6 @@ function addRemoveButton(task) {
         */
         let tasks = JSON.parse(localStorage.getItem('tasks'))
         let index = tasks.indexOf(task.innerHTML)
-        console.log(index)
         // remove the task from the tasks array by using .splice(index, amount of removable items)
         tasks.splice(index, 1)
         //then we save the remaining tasks back to local storage
@@ -106,7 +103,6 @@ function updateLocalStorage(target, taskText, completed) {
     let tasks = JSON.parse(localStorage.getItem('tasks')) || []
     // find the index of the task that was clicked
     let index = tasks.findIndex(task => task.text === taskText)
-    console.log(target,'targetti')
     // toggle the completed status of the task
     tasks[index].completed = !completed
     // temporarily store the task that was clicked
@@ -117,8 +113,6 @@ function updateLocalStorage(target, taskText, completed) {
     tasks.push(tempTask)
     // update the local storage with the updated tasks array
     localStorage.setItem('tasks', JSON.stringify(tasks))
-    console.log(tasks)
-
     // here we update the amount of tasks in the task lists
     updateTaskCount()
 }
@@ -126,10 +120,8 @@ function updateLocalStorage(target, taskText, completed) {
 // here we load the existing tasks from local storage on page load
 window.onload = function () {
     let tasks = JSON.parse(localStorage.getItem('tasks')) || []
-    console.log(tasks)
     for (let task of tasks) {
         let newTask = createTaskElement(task.text , task.completed)
-        console.log(newTask)
         
         if (task.completed) {
             completedTaskList.appendChild(newTask, addRemoveButton(newTask))
