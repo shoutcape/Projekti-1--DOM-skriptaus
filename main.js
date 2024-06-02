@@ -70,14 +70,14 @@ function createTaskElement(taskText, completed = false) {
             completedTaskList.appendChild(newTask)
         }
         newTask.classList.toggle('completed')
-        updateLocalStorage(event.target, taskText, tempCompleted)
+        updateLocalStorage(taskText, tempCompleted)
     }) 
     return newTask
 }
 
 function addTask() {
     let inputvalue = document.getElementById('newTask')
-    if (inputvalue.value == '' || inputvalue.value.length < 3) {
+    if (inputvalue.value.length < 3) {
         inputvalue.placeholder = 'Please enter a task with at least 3 characters.'
         inputvalue.classList.add('validationError')
         inputvalue.value = ''
@@ -100,7 +100,7 @@ function addTask() {
     updateTaskCount()
 }
 
-function updateLocalStorage(target, taskText, completed) {
+function updateLocalStorage(taskText, completed) {
     let tasks = JSON.parse(localStorage.getItem('tasks')) || []
     // find the index of the task that was clicked
     let index = tasks.findIndex(task => task.text === taskText)
